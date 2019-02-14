@@ -7,6 +7,11 @@ a{
 
 mat-toolbar{
 	color:#fff;
+	box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)
+}
+
+.top-toolbar{
+	z-index: 2;
 }
 
 .button--disabled{
@@ -34,6 +39,10 @@ mat-toolbar{
   height: 100%;
 }
 
+.sidenav{
+	box-shadow: 2px 16px 7px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
 .sidenav-content-toolbar{
 	background-color: #4b88bb;
 }
@@ -42,9 +51,6 @@ mat-toolbar{
 	padding-top:4px;
 }
 
-mat-tree-node li{
-
-}
 .button-title{
 	padding:1px;
 	font-size: 14px;
@@ -81,4 +87,9 @@ mat-nested-tree-node li ul{
 }
 .mat-button-wrapper{
 	width: 100%;
+}
+
+.mat-button-ripple-round{
+	right: inherit;
+	bottom: inherit;
 }
