@@ -1,0 +1,84 @@
+/* Anchors */
+a{
+	text-decoration: none;
+	width: 100%;
+	padding: 10px;
+}
+
+mat-toolbar{
+	color:#fff;
+}
+
+.button--disabled{
+	display: none;
+}
+
+.button--disabled-title{
+	margin: 0 14px 0 32px;
+	color:#fff;
+}
+
+.flex-center{
+	justify-content: center;
+}
+
+.header-top{
+	height:150px;
+	background-color: green;
+}
+.header-menu{
+	background-color: #28729e;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav-content-toolbar{
+	background-color: #4b88bb;
+}
+
+.sidenav-content-navlist{
+	padding-top:4px;
+}
+
+mat-tree-node li{
+
+}
+.button-title{
+	padding:1px;
+	font-size: 14px;
+	color:#fff;
+}
+
+mat-nested-tree-node li,
+mat-nested-tree-node li ul{
+	margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+.mat-nested-tree-node-button{
+	display: flex;
+	width: -webkit-fill-available;
+}
+
+.mat-nested-tree-node-div, .mat-tree-node-list{
+	background-color: #69a8dc;
+	margin: 1px auto;
+	color:#fff;
+}
+
+.mat-nested-tree-node-div:hover, .mat-tree-node-list:hover{
+		background-color: #9fc4e4;	
+}
+
+.mat-nested-tree-node-icon{
+	margin: 0 8px;
+}
+
+.tree-invisible {
+  display: none;
+}
+.mat-button-wrapper{
+	width: 100%;
+}

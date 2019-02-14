@@ -1,0 +1,55 @@
+<mat-toolbar>
+  <mat-toolbar-row class="header-top"></mat-toolbar-row>
+  <mat-toolbar-row class="header-menu">
+    <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" 
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="false">
+    <mat-toolbar class="sidenav-content-toolbar">Choose the region</mat-toolbar>
+    
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="sidenav-content-mat-tree-list">
+
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle class="mat-tree-node-list">
+        <a href="#">
+          <li>
+            <button mat-icon-button disabled class="button--disabled"></button>
+            <span class="button--disabled-title">{{node.name}}</span>
+          </li>
+        </a>
+      </mat-tree-node>
+
+      <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+        <li>
+          <div class="mat-nested-tree-node-div">
+            <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle' + node.name" class="mat-nested-tree-node-button">
+              <mat-icon class="mat-icon-rtl-mirror mat-nested-tree-node-icon">{{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}</mat-icon>
+              <a class="button-title" href="#">{{node.name}}</a>
+            </button>
+            
+          </div>
+          <ul [class.tree-invisible]="!treeControl.isExpanded(node)">
+            <ng-container matTreeNodeOutlet></ng-container>  
+          </ul>
+        </li>
+      </mat-nested-tree-node>
+    </mat-tree>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="sidenav-content-toolbar flex-center">
+      <span class="">Main Title</span>
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
