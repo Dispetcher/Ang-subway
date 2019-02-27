@@ -1,0 +1,114 @@
+$sidenav-bgcolor: #4987c7;
+$sidenav-toolbar-bgcolor: #4b88bb;
+/* Anchors */
+a{
+	text-decoration: none;
+	width: 100%;
+	padding: 10px;
+	color: #fff;
+}
+a:visited{
+	color: #fff;
+}
+
+mat-toolbar{
+	color:#fff;
+}
+
+.top-toolbar{
+	z-index: 2;
+}
+
+.button--disabled{
+	display: none;
+}
+
+.button--disabled-title{
+	margin: 0 14px 0 32px;
+	color:#fff;
+}
+
+.flex-center{
+	justify-content: center;
+}
+
+.header-top{
+	height:150px;
+	background-color: green;
+}
+.header-menu{
+	background-color: #28729e;
+	box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav{
+	box-shadow: 2px 16px 7px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.sidenav-content-toolbar{
+	background-color: $sidenav-toolbar-bgcolor;
+}
+
+.sidenav-content-navlist{
+	padding-top:4px;
+}
+
+.button-title{
+	padding:1px;
+	font-size: 14px;
+	color:#fff;
+}
+
+mat-nested-tree-node li,
+mat-nested-tree-node li ul{
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.mat-nested-tree-node-button{
+	display: flex;
+	width: -webkit-fill-available;
+}
+
+.mat-nested-tree-node-div, .mat-tree-node-list{
+	background-color: $sidenav-bgcolor;
+	margin: 1px auto;
+	color:#fff;
+}
+
+.mat-nested-tree-node-div:hover, .mat-tree-node-list:hover{
+	background-color: #9fc4e4;	
+}
+
+.mat-nested-tree-node-icon{
+	margin: 0 8px;
+}
+
+.tree-invisible {
+  display: none;
+}
+.mat-button-wrapper{
+	width: 100%;
+}
+
+.mat-button-ripple-round{
+	right: inherit;
+	bottom: inherit;
+}
+
+.toolbar-icon{}
+
+.toolbar-title{
+	margin: auto;
+}
+
+.main-content{}
+
+.grid-tile-content{
+	cursor: pointer;
+}

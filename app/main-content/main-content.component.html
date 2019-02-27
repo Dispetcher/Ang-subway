@@ -1,13 +1,15 @@
 <mat-toolbar class="top-toolbar">
   <mat-toolbar-row class="header-top"></mat-toolbar-row>
   <mat-toolbar-row class="header-menu">
-    <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <button type="button" aria-label="Back" mat-icon-button (click)="location.back()">
+      <mat-icon aria-label="Back icon">arrow_back</mat-icon>
+    </button>
+    <button type="button" aria-label="Home" mat-icon-button (click)="toHomePage()">
+      <mat-icon aria-label="Home icon">home</mat-icon>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -21,7 +23,7 @@
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="sidenav-content-mat-tree-list">
 
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle class="mat-tree-node-list">
-        <a href="#">
+        <a href="{{node.link}}" title="{{node.name}}" class="link">
           <li>
             <button mat-icon-button disabled class="button--disabled"></button>
             <span class="button--disabled-title">{{node.name}}</span>
@@ -34,7 +36,7 @@
           <div class="mat-nested-tree-node-div">
             <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle' + node.name" class="mat-nested-tree-node-button">
               <mat-icon class="mat-icon-rtl-mirror mat-nested-tree-node-icon">{{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}</mat-icon>
-              <a class="button-title" href="#">{{node.name}}</a>
+              <a class="button-title" href="{{node.link}}" title="{{node.name}}" class="link">{{node.name}}</a>
             </button>
             
           </div>
@@ -47,9 +49,11 @@
 
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar class="sidenav-content-toolbar flex-center">
-      <span class="">Main Title</span>
-    </mat-toolbar>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+      <!-- Here goes the page content-->
+    </div> 
 
   </mat-sidenav-content>
 </mat-sidenav-container>

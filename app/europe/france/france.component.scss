@@ -1,0 +1,11 @@
+$sidenav-toolbar-bgcolor: #4b88bb;
+
+.sidenav-content-toolbar{
+	background-color: $sidenav-toolbar-bgcolor;
+	box-shadow: 2px 6px 6px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.toolbar-title{
+	margin: auto;
+	color: #fff;
+}
