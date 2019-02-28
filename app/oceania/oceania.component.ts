@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class OceaniaComponent implements OnInit {
 
 	title:string = 'Oceania';
-  cities:Array<any>;
+  countries:Array<any>;
   
   constructor() {
   	this.countries = [
