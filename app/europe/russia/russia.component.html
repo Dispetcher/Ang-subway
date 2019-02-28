@@ -1,3 +1,14 @@
 <mat-toolbar class="sidenav-content-toolbar">
 	<span class="toolbar-title">{{title}}</span>
 </mat-toolbar>
+
+<div class="page-content">
+	<mat-grid-list rowHeight="200px" cols="2" gutterSize="25px" class="grid">
+	<mat-grid-tile class="grid-tile" *ngFor="let city of cities" [colspan]="city.cols">
+		<div [routerLink]="!(city.link)?city.title.toLowerCase():city.link" class="grid-tile-content">
+			<img [src]="city.img.src" [alt]="city.title">
+			<span class="grid-tile-link">{{city.title}}</span>
+		</div>
+	</mat-grid-tile>
+</mat-grid-list>
+</div>

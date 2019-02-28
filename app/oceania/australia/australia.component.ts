@@ -3,11 +3,23 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-australia',
   templateUrl: './australia.component.html',
-  styleUrls: ['../../main-content/main-content.component.scss']
+  styleUrls: ['../../app.component.scss']
 })
 export class AustraliaComponent implements OnInit {
 
-  constructor() { }
+  title:string = 'Australia';
+  cities:Array<any>;
+  
+  constructor() {
+  	this.cities = [
+  	{ 'title': 'Melbourne', 
+  	  'cols': 1,
+	 	  'img': {
+	 	  	'src': '#'
+  	  },
+  	}
+  	];
+  }
 
   ngOnInit() {
   }

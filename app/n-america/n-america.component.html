@@ -2,7 +2,8 @@
 	<span class="toolbar-title">{{title}}</span>
 </mat-toolbar>
 
-<mat-grid-list rowHeight="100px" cols="2" class="grid">
+<div class="page-content two-rows">
+	<mat-grid-list rowHeight="200px" cols="2" gutterSize="25px" class="grid">
 	<mat-grid-tile class="grid-tile" *ngFor="let country of countries" [colspan]="country.cols">
 		<div [routerLink]="!(country.link)?country.title.toLowerCase():country.link" class="grid-tile-content">
 			<img [src]="country.img.src" [alt]="country.title">
@@ -10,6 +11,7 @@
 		</div>
 	</mat-grid-tile>
 </mat-grid-list>
+</div>
 
 <!--<mat-tab-group animationDuration="0ms" mat-align-tabs="center">
 	<mat-tab label="Overview">

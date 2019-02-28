@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NAmericaComponent implements OnInit {
   
+  title:string = 'North America';
   countries:Array<any>;
   
   constructor() {

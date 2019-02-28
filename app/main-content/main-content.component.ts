@@ -141,7 +141,12 @@ const RegionData:RegionNode[] = [
 		link: 'oceania',
 		children: [
 			{	name: 'Australia',
-				link: 'oceania/australia'
+				link: 'oceania/australia',
+				children: [
+					{	name: 'Melbourne',
+					link: 'oceania/australia/melbourne'
+				  }
+				]
 			}
 		]
 	}	
@@ -150,7 +155,7 @@ const RegionData:RegionNode[] = [
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
-  styleUrls: ['./main-content.component.scss']
+  styleUrls: ['../app.component.scss']
 })
 
 export class MainContentComponent implements OnInit, AfterViewInit {

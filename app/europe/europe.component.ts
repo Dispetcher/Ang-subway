@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-europe',
   templateUrl: './europe.component.html',
-  styleUrls: ['../main-content/main-content.component.scss']
+  styleUrls: ['../app.component.scss']
 })
 export class EuropeComponent implements OnInit {
 
+  title:string = 'Europe';
   countries:Array<any>;
 
   constructor() { 

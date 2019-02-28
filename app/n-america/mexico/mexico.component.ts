@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MexicoComponent implements OnInit {
 
-  constructor() { }
+  title:string = 'Mexico';
+  cities:Array<any>;
+  
+  constructor() {
+  	this.cities = [
+  	{ 'title': 'Mexico', 
+  	  'cols': 2,
+	 	  'img': {
+	 	  	'src': '#'
+  	  },
+  	},
+   	];
+  }
 
   ngOnInit() {
   }

@@ -7,7 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CanadaComponent implements OnInit {
 
-  constructor() { }
+  title:string = 'Canada';
+  cities:Array<any>;
+  
+  constructor() {
+  	this.cities = [
+  	{ 'title': 'Montreal', 
+  	  'cols': 1,
+	 	  'img': {
+	 	  	'src': '#'
+  	  },
+  	},
+  	{ 'title': 'Toronto', 
+  	  'cols': 1,
+	 	  'img': {
+	 	  	'src': '#'
+  	  }
+  	},
+  	{ 'title': 'Vancouver', 
+  	  'cols': 2,
+	 	  'img': {
+	 	  	'src': '#'
+  	  }
+  	},
+  	];
+  }
 
   ngOnInit() {
   }

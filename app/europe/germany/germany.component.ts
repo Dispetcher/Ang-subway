@@ -3,11 +3,23 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-germany',
   templateUrl: './germany.component.html',
-  styleUrls: ['../../main-content/main-content.component.scss']
+  styleUrls: ['../../app.component.scss']
 })
 export class GermanyComponent implements OnInit {
 
-  constructor() { }
+  title:string = 'Germany';
+  cities:Array<any>;
+  
+  constructor() {
+  	this.cities = [
+  	{ 'title': 'Frankfurt', 
+  	  'cols': 1,
+	 	  'img': {
+	 	  	'src': '#'
+  	  },
+  	}
+  	];
+  }
 
   ngOnInit() {
   }

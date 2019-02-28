@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-asia',
   templateUrl: './asia.component.html',
-  styleUrls: ['../main-content/main-content.component.scss']
+  styleUrls: ['../app.component.scss']
 })
-export class AsiaComponent implements OnInit {
+export class AsiaComponent implements AfterViewInit {
 
 	title:string = 'Asia';
 	countries:Array<any>;
 
-  constructor() { 
+  constructor(public el:ElementRef) { 
   	this.countries = [
   	{ 'title': 'China', 
   	  'cols': 1,
@@ -27,6 +27,7 @@ export class AsiaComponent implements OnInit {
   	];
   }
 
-  ngOnInit() {}
+  ngAfterViewInit() {
+  }
 
 }
