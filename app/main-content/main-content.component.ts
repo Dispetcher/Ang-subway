@@ -20,7 +20,7 @@ const RegionData:RegionNode[] = [
 				link: 'asia/china',
 				children: [
 					{	name: 'Hong Kong',
-						link: 'asia/china/hong_kong'
+						link: 'asia/china/hong-kong'
 					}
 				]
 			},
@@ -76,7 +76,7 @@ const RegionData:RegionNode[] = [
 						link: 'europe/russia/moscow',
 				  },
 				  {	name: 'St. Petersburg',
-						link: 'europe/russia/st_petersburg',
+						link: 'europe/russia/st-petersburg',
 					}
 				]
 			},
@@ -91,19 +91,19 @@ const RegionData:RegionNode[] = [
 		]
 	},
 	{	name: 'N.America',
-		link: 'n.america',
+		link: 'n-america',
 		children: [
 			{	name: 'Canada',
-				link: 'n.america/canada',
+				link: 'n-america/canada',
 				children: [
 					{	name: 'Montreal',
-						link: 'n.america/canada/montreal',
+						link: 'n-america/canada/montreal',
 					},
 					{	name: 'Toronto',
-						link: 'n.america/canada/toronto',
+						link: 'n-america/canada/toronto',
 					},
 					{	name: 'Vancouver',
-						link: 'n.america/canada/vancouver',
+						link: 'n-america/canada/vancouver',
 					}
 				]
 			},
@@ -122,16 +122,16 @@ const RegionData:RegionNode[] = [
 						link: 'n.america/usa/atlanta'
 					},
 					{	name: 'Los Angeles, CA',
-						link: 'n.america/usa/los_angeles'
+						link: 'n.america/usa/los-angeles'
 					},
 					{	name: 'Miami, FL',
-						link: 'n.america/usa/los_angeles'
+						link: 'n.america/usa/miami'
 					},
 					{	name: 'New York, NY',
-						link: 'n.america/usa/new_york'
+						link: 'n.america/usa/new-york'
 					},
 					{	name: 'San Francisco, CA',
-						link: 'n.america/usa/san_francisco'
+						link: 'n.america/usa/san-francisco'
 					}
 				]
 			}			

@@ -23,7 +23,7 @@ export class RussiaComponent implements OnInit {
 	 	  'img': {
 	 	  	'src': '#'
   	  },
-  	  'link': 'st_petersburg'
+  	  'link': 'st-petersburg'
   	}
   	];
   }

@@ -17,6 +17,7 @@ export class MexicoComponent implements OnInit {
 	 	  'img': {
 	 	  	'src': '#'
   	  },
+      link: 'mexico-city'
   	},
    	];
   }

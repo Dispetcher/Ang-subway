@@ -23,7 +23,7 @@ export class UsaComponent implements OnInit {
 	 	  'img': {
 	 	  	'src': '#'
   	  },
-  	  link: 'los_angeles'
+  	  link: 'los-angeles'
   	},
   	{ 'title': 'Miami', 
   	  'cols': 1,
@@ -36,14 +36,14 @@ export class UsaComponent implements OnInit {
 	 	  'img': {
 	 	  	'src': '#'
   	  },
-  	  link: 'new_york'
+  	  link: 'new-york'
   	},
   	{ 'title': 'San Francisco', 
   	  'cols': 1,
 	 	  'img': {
 	 	  	'src': '#'
   	  },
-  	  link: 'san_francisco'
+  	  link: 'san-francisco'
   	}
   	];
   }
