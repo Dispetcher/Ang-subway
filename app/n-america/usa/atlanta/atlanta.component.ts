@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-atlanta',
-  templateUrl: './atlanta.component.html',
-  styleUrls: ['../../../app.component.scss']
+  templateUrl: '../../../city/city.component.html',
+  styleUrls: ['../../../city/city.component.scss']
 })
-export class AtlantaComponent implements OnInit {
+export class AtlantaComponent implements OnInit, OnChanges {
 
   title:string = 'Atlanta, GA';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(){
+  	
   }
 
 }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-milan',
-  templateUrl: './milan.component.html',
-  styleUrls: ['./milan.component.scss']
+  templateUrl: '../../../city/city.component.html',
+  styleUrls: ['../../../city/city.component.scss']
 })
 export class MilanComponent implements OnInit {
 

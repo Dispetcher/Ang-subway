@@ -49,6 +49,9 @@ import { UsaComponent } from './n-america/usa/usa.component';
 /*=== Oceania ===*/
 import { AustraliaComponent } from './oceania/australia/australia.component';
     import { MelbourneComponent } from './oceania/australia/melbourne/melbourne.component';
+/*import { RegionComponent } from './region/region.component';
+import { CountryComponent } from './country/country.component';
+import { CityComponent } from './city/city.component';*/
 
 
 
@@ -91,7 +94,10 @@ import { AustraliaComponent } from './oceania/australia/australia.component';
     NewYorkComponent,
     SanFranciscoComponent,
     MelbourneComponent,
-    MexicoCityComponent
+    MexicoCityComponent,
+   /* RegionComponent,
+    CountryComponent,
+    CityComponent*/
   ],
   imports: [
     BrowserModule,

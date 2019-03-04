@@ -2,12 +2,18 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-europe',
-  templateUrl: './europe.component.html',
-  styleUrls: ['../app.component.scss']
+  templateUrl: '../region/region.component.html',
+  styleUrls: ['../region/region.component.scss']
 })
 export class EuropeComponent implements OnInit {
 
   title:string = 'Europe';
+  /*== Adding necessary classes ==*/
+  twoRows:boolean = true;
+  threeCols:boolean = true;
+  gtCol3:boolean = true;
+  /* Column num in template */
+  colsNum:string = '3';
   countries:Array<any>;
 
   constructor() { 

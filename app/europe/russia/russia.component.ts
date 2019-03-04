@@ -2,13 +2,17 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-russia',
-  templateUrl: './russia.component.html',
-  styleUrls: ['../../app.component.scss']
+  templateUrl: '../../country/country.component.html',
+  styleUrls: ['../../country/country.component.scss']
 })
 export class RussiaComponent implements OnInit {
 
   title:string = 'Russia';
   cities:Array<any>;
+  /*===Adding necessary classes ===*/
+  gt:boolean = true;
+  /* Columns number in template */
+  colsNum:string = '2';
   
   constructor() {
   	this.cities = [

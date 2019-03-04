@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mexico-city',
-  templateUrl: './mexico-city.component.html',
-  styleUrls: ['../../../app.component.scss']
+  templateUrl: '../../../city/city.component.html',
+  styleUrls: ['../../../city/city.component.scss']
 })
 export class MexicoCityComponent implements OnInit {
 
-  title:string = 'Mexico';
+  title:string = 'Mexico city';
 
   constructor() { }
 

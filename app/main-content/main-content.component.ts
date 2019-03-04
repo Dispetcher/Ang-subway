@@ -1,156 +1,13 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-
-interface RegionNode {
-	name: string;
-	link: string;
-	children?: RegionNode[];
-}
-
-const RegionData:RegionNode[] = [
-	{	name: 'Asia',
-		link: 'asia',
-		children:[
-			{	name: 'China',
-				link: 'asia/china',
-				children: [
-					{	name: 'Hong Kong',
-						link: 'asia/china/hong-kong'
-					}
-				]
-			},
-			{ name: 'Kazakhstan',
-				link: 'asia/kazakhstan',
-				children: [
-					{ name: 'Almaty',
-						link: 'asia/kazahstan/almaty'
-					}
-				]
-			}
-		]
-	},
-	{ name: 'Europe',
-	  link: 'europe',
-		children: [
-			{	name: 'France',
-				link: 'europe/france',
-				children: [
-					{	name: 'Lille',
-						link: 'europe/france/lille'
-					}
-				]
-			},
-			{	name: 'Germany',
-				link: 'europe/germany',
-				children: [
-					{	name: 'Frankfurt',
-						link: 'europe/germany/frankfurt'
-					}
-				]
-			},
-			{	name: 'Greece',
-				link: 'europe/greece',
-				children: [
-					{	name: 'Athens',
-						link: 'europe/greece/athens'
-					}
-				]
-			},
-			{	name: 'Italy',
-				link: 'europe/italy',
-				children: [
-					{	name: 'Milan',
-						link: 'europe/italy/milan'
-					}
-				]
-			},
-			{ name: 'Russia',
-				link: 'europe/russia',
-				children: [
-					{	name: 'Moscow',
-						link: 'europe/russia/moscow',
-				  },
-				  {	name: 'St. Petersburg',
-						link: 'europe/russia/st-petersburg',
-					}
-				]
-			},
-			{ name: 'Spain',
-				link: 'europe/spain',
-				children: [
-					{	name: 'Barcelona',
-						link: 'europe/spain/barcelona'
-					}
-				]
-			}			
-		]
-	},
-	{	name: 'N.America',
-		link: 'n-america',
-		children: [
-			{	name: 'Canada',
-				link: 'n-america/canada',
-				children: [
-					{	name: 'Montreal',
-						link: 'n-america/canada/montreal',
-					},
-					{	name: 'Toronto',
-						link: 'n-america/canada/toronto',
-					},
-					{	name: 'Vancouver',
-						link: 'n-america/canada/vancouver',
-					}
-				]
-			},
-			{	name: 'Mexico',
-				link: 'n.america/mexico',
-				children: [
-					{	name: 'Mexico',
-						link: 'n.america/mexico/mexico',
-					}
-				]
-			},
-			{	name: 'USA',
-				link: 'n.america/usa',
-				children: [
-					{	name: 'Atlanta, GA',
-						link: 'n.america/usa/atlanta'
-					},
-					{	name: 'Los Angeles, CA',
-						link: 'n.america/usa/los-angeles'
-					},
-					{	name: 'Miami, FL',
-						link: 'n.america/usa/miami'
-					},
-					{	name: 'New York, NY',
-						link: 'n.america/usa/new-york'
-					},
-					{	name: 'San Francisco, CA',
-						link: 'n.america/usa/san-francisco'
-					}
-				]
-			}			
-		]
-	},
-	{	name: 'Oceania',
-		link: 'oceania',
-		children: [
-			{	name: 'Australia',
-				link: 'oceania/australia',
-				children: [
-					{	name: 'Melbourne',
-					link: 'oceania/australia/melbourne'
-				  }
-				]
-			}
-		]
-	}	
-];
+/*import { MatSidenav } from '@Angular/material'; Has already imported in module file*/
+import { RegionNode } from './region-node';
+import { RegionsData } from './regions';
 
 @Component({
   selector: 'app-main-content',
@@ -171,11 +28,13 @@ export class MainContentComponent implements OnInit, AfterViewInit {
 
   hasChild = (_:number, node: RegionNode) => !!node.children && node.children.length > 0;
 
+  @ViewChild('drawer') drawer:MatSidenav;
+
   /*****************************/
   /*===========================*/
   /*****************************/
   constructor(private breakpointObserver: BreakpointObserver, private location: Location, public el:ElementRef) {
-  	this.dataSource.data = RegionData;
+  	this.dataSource.data = RegionsData;
   }
 
   ngOnInit(){}
@@ -186,6 +45,18 @@ export class MainContentComponent implements OnInit, AfterViewInit {
   toHomePage(){
   	let loc = window.location;
   	window.location.href = loc.protocol + "//" + loc.host;
+  }
+
+  menuOpen(){
+  	this.drawer.toggle();
+  	let inkBarLeft = this.el.nativeElement.querySelector("mat-ink-bar").style.left;
+  	inkBarLeft = inkBarLeft.replace('px','');
+  	let drawerWidth = parseInt(this.drawer._width)/2;
+  	if(this.drawer._opened){
+  		this.el.nativeElement.querySelector("mat-ink-bar").style.left = ( parseInt(inkBarLeft) - drawerWidth) + 'px';
+  	}else{
+	 		this.el.nativeElement.querySelector("mat-ink-bar").style.left = ( parseInt(inkBarLeft) + drawerWidth) + 'px';
+  	}
   }
 
 }
