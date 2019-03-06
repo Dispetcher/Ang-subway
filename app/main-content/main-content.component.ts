@@ -5,7 +5,7 @@ import { Observable, fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-/*import { MatSidenav } from '@Angular/material'; Has already imported in module file*/
+import { MatSidenav } from '@angular/material'; /*Has already imported in module file*/
 import { RegionNode } from './region-node';
 import { RegionsData } from './regions';
 
@@ -51,8 +51,8 @@ export class MainContentComponent implements OnInit, AfterViewInit {
   	this.drawer.toggle();
   	let inkBarLeft = this.el.nativeElement.querySelector("mat-ink-bar").style.left;
   	inkBarLeft = inkBarLeft.replace('px','');
-  	let drawerWidth = parseInt(this.drawer._width)/2;
-  	if(this.drawer._opened){
+  	let drawerWidth = (this.drawer._width)/2;
+  	if(this.drawer.opened){
   		this.el.nativeElement.querySelector("mat-ink-bar").style.left = ( parseInt(inkBarLeft) - drawerWidth) + 'px';
   	}else{
 	 		this.el.nativeElement.querySelector("mat-ink-bar").style.left = ( parseInt(inkBarLeft) + drawerWidth) + 'px';

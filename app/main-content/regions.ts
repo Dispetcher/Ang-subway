@@ -16,7 +16,7 @@ export const RegionsData:RegionNode[] = [
 				link: 'asia/kazakhstan',
 				children: [
 					{ name: 'Almaty',
-						link: 'asia/kazahstan/almaty'
+						link: 'asia/kazakhstan/almaty'
 					}
 				]
 			}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 /*=== Regions ===*/
@@ -46,6 +47,8 @@ import { AustraliaComponent } from './oceania/australia/australia.component';
 
 
 const routes: Routes = [
+	{ path: 'main', component: MainComponent },
+
 	{ path: 'asia', component: AsiaComponent },
 	{ path: 'asia/china', component: ChinaComponent },
 	{ path: 'asia/china/hong-kong', component: HongKongComponent },
@@ -85,7 +88,7 @@ const routes: Routes = [
 	{ path: 'oceania/australia', component: AustraliaComponent },
 	{ path: 'oceania/australia/melbourne', component: MelbourneComponent },
 
-	{ path: '', redirectTo: '', pathMatch: 'full'},
+	{ path: '', redirectTo: 'main', pathMatch: 'full'},
 	{ path: '**', component: PageNotFoundComponent }
 ];
 

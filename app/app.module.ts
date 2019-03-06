@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainContentComponent } from './main-content/main-content.component';
-import { LayoutModule } from '@angular/cdk/layout';
+import { MainComponent } from './main/main.component';
 import { MaterialModule } from './material/material.module';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -49,6 +50,7 @@ import { UsaComponent } from './n-america/usa/usa.component';
 /*=== Oceania ===*/
 import { AustraliaComponent } from './oceania/australia/australia.component';
     import { MelbourneComponent } from './oceania/australia/melbourne/melbourne.component';
+
 /*import { RegionComponent } from './region/region.component';
 import { CountryComponent } from './country/country.component';
 import { CityComponent } from './city/city.component';*/
@@ -59,6 +61,7 @@ import { CityComponent } from './city/city.component';*/
   declarations: [
     AppComponent,
     MainContentComponent,
+    MainComponent,
     NAmericaComponent,
     EuropeComponent,
     AsiaComponent,
@@ -94,7 +97,7 @@ import { CityComponent } from './city/city.component';*/
     NewYorkComponent,
     SanFranciscoComponent,
     MelbourneComponent,
-    MexicoCityComponent,
+    MexicoCityComponent
    /* RegionComponent,
     CountryComponent,
     CityComponent*/

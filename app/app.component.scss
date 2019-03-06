@@ -110,3 +110,17 @@ mat-nested-tree-node li ul{
 }
 
 .main-content{}
+
+#main-content{
+	padding: 20px;
+}
+.header-title{
+	text-align: center;
+	font-size: 48px;
+	font-style: italic;
+	font-weight: 600;
+}
+#map{
+	/*height: -webkit-fill-available;*/
+	width: calc(100% - 40px);
+}
