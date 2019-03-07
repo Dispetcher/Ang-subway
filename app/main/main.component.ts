@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angula
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
 import am4geodata_worldUltra from '@amcharts/amcharts4-geodata/worldUltra';
+import { regionsMap } from './regions-map';
 
 @Component({
   selector: 'app-main',
@@ -12,10 +13,17 @@ export class MainComponent implements OnInit, AfterViewInit{
 
 	@ViewChild('mapEl') mapEl:ElementRef;
 
+	workColor:am4core.Color = am4core.color("#4b88bb");
+
   constructor(public el:ElementRef) {}
 
   ngOnInit() {
-  	this.mapEl.nativeElement.style.height = document.body.scrollHeight - 150 - 64 - 40 - 58 + 'px';
+  	let headerH = 150;
+  	let toolH = 64;
+  	let paddings = 40;
+  	let titleH = 58+48*2;
+
+  	this.mapEl.nativeElement.style.height = document.body.scrollHeight - headerH - toolH - paddings - titleH + 'px';
    }
   
   ngAfterViewInit(){
@@ -36,10 +44,13 @@ export class MainComponent implements OnInit, AfterViewInit{
   	polygons.useGeodata = true; /*make map load polygon data from GoeJSON*/
   	polygons.exclude = ['AQ'];
 
-  	/* Configure regions*/
+  	/*Changing the color from chosen regions*/
+  	polygons.data = regionsMap;
+
+  	/*Configure regions*/
   	let polygonTemplate = polygons.mapPolygons.template;
   	polygonTemplate.tooltipText = "{name}";
-  	polygonTemplate.fill = am4core.color("#4b88bb");
+  	polygonTemplate.fill = am4core.color("#7191a5");
 
   	/*Create a hover listener*/
   	let hoverState = polygonTemplate.states.create("hover");
