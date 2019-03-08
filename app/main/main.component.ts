@@ -45,7 +45,8 @@ export class MainComponent implements OnInit, AfterViewInit{
   	polygons.exclude = ['AQ'];
 
   	/*Changing the color from chosen regions*/
-  	polygons.data = regionsMap;
+  	polygons.data = regionsMap;    
+    console.log(regionsMap);
 
   	/*Configure regions*/
   	let polygonTemplate = polygons.mapPolygons.template;
@@ -56,7 +57,15 @@ export class MainComponent implements OnInit, AfterViewInit{
   	let hoverState = polygonTemplate.states.create("hover");
   	hoverState.properties.fill = am4core.color("#85b9e4");
 
+    /*Bind 'fill' prop to 'fill' key in region data
+    Without it doesn't work color changing*/
+    polygonTemplate.propertyFields.fill = 'fill';
 
+    /*========Adding event listener==========*/
+    /****************Not working**************/
+    map.series.template.events.on('hit', function(e){
+      console.log(e.target);
+    });
   }
 
 }
